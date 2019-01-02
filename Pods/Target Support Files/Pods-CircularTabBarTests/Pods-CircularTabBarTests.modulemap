@@ -1,0 +1,6 @@
+framework module Pods_CircularTabBarTests {
+  umbrella header "Pods-CircularTabBarTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
