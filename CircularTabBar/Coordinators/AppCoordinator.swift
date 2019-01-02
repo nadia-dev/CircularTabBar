@@ -26,6 +26,17 @@ class AppCoordinator {
     }
     
     func goToIndex(_ index: Int) {
-        tabBarController.selectedIndex = index
+        guard let fromView = tabBarController.selectedViewController?.view,
+            let toView = tabBarController.viewControllers?[index].view else { return }
+        if fromView != toView {
+            UIView.transition(from: fromView,
+                              to: toView,
+                              duration: 0.3,
+                              options: .transitionCurlUp) { finished in
+                if finished {
+                    self.tabBarController.selectedIndex = index
+                }
+            }
+        }
     }
 }

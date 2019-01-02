@@ -42,6 +42,4 @@ class CircularTabBarController: UITabBarController {
         super.viewDidLoad()
         tabBar.isHidden = true
     }
-
-
 }
