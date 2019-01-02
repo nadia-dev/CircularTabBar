@@ -11,13 +11,15 @@ import Anchorage
 
 class CircularTabBarController: UITabBarController {
     
+    private let tabItemSide: CGFloat = 50
+    
     var coordinator: AppCoordinator? {
         didSet {
             var tabs = [CircularTabView]()
             guard let coordinatorTabs = coordinator?.tabs else { return }
             
             for (i, tab) in coordinatorTabs.enumerated() {
-                tabs.append(CircularTabView(side: 50, color: tab.color, index: i))
+                tabs.append(CircularTabView(side: tabItemSide, color: tab.color, index: i))
             }
             
             let onTabSelect: (Int) -> Void = { [unowned self] index in
@@ -26,7 +28,7 @@ class CircularTabBarController: UITabBarController {
             
             let tabbar = CircularTabBar(frame: CGRect.zero,
                                         tabViews: tabs,
-                                        radius: 100,
+                                        radius: tabItemSide * 2,
                                         onTabSelect: onTabSelect)
             view.addSubview(tabbar)
             tabbar.horizontalAnchors == view.horizontalAnchors
