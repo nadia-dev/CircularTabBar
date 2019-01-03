@@ -15,6 +15,16 @@ class CircularTabBar: UIView, CircularTabViewDelegate {
     private let main: UIView = UIView()
     private let mainButtonSide: CGFloat = 50
     private let onTabSelect: (Int) -> Void
+    
+    private var tabObjects = [TabObject]()
+    private var isShowingTabs = false
+    
+    struct TabObject {
+        let index: Int
+        let view: CircularTabView
+        let startPosition: CGPoint
+        let finalPosition: CGPoint
+    }
 
     init(frame: CGRect,
          tabViews: [CircularTabView],
@@ -36,7 +46,7 @@ class CircularTabBar: UIView, CircularTabViewDelegate {
     }
     
     @objc func didTapMain() {
-        animateTabsIn()
+        isShowingTabs ? animateTabsOut() : animateTabsIn()
     }
     
     private func addMainButton() {
@@ -57,22 +67,46 @@ class CircularTabBar: UIView, CircularTabViewDelegate {
             }
             let x = radius * -cos(CGFloat(angle))
             let y = radius * -sin(CGFloat(angle))
-            tab.center = CGPoint(x: x + bounds.midX, y: y + bounds.midY)
+            //tab.center = CGPoint(x: x + bounds.midX, y: y + bounds.midY)
             tab.alpha = 0
             tab.delegate = self
+            let startPosition = CGPoint(x: bounds.midX, y: frame.height/2)
+            tabObjects.append(TabObject(index: i,
+                                        view: tab,
+                                        startPosition: startPosition,
+                                        finalPosition: CGPoint(x: x + bounds.midX, y: y + bounds.midY)))
+            tab.center = startPosition
             addSubview(tab)
         }
     }
     
-    private func animateTabsIn() {
-        let animDuration = 0.3
-        for (i, tab) in tabViews.enumerated() {
+    private func animateTabsOut() {
+        let animDuration = 0.1
+        for (i, tabObj) in tabObjects.enumerated() {
             UIView.animate(withDuration: animDuration,
                            delay: animDuration * Double(i),
                            options: [.curveLinear],
                            animations: {
-                tab.alpha = 1
-            }, completion: nil)
+                            tabObj.view.alpha = 0
+                            tabObj.view.center = tabObj.startPosition
+            }, completion: { finished in
+                self.isShowingTabs = false
+            })
+        }
+    }
+    
+    private func animateTabsIn() {
+        let animDuration = 0.1
+        for (i, tabObj) in tabObjects.enumerated() {
+            UIView.animate(withDuration: animDuration,
+                           delay: animDuration * Double(i),
+                           options: [.curveLinear],
+                           animations: {
+                tabObj.view.alpha = 1
+                tabObj.view.center = tabObj.finalPosition
+            }, completion: { finished in
+                self.isShowingTabs = true
+            })
         }
     }
     
