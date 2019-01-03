@@ -10,10 +10,10 @@ import UIKit
 
 class AppCoordinator {
     
-    var tabBarController: CircularTabBarController
+    var tabBarController: BaseTabBarController
     var tabs: [AnyTabCoordinator]
     
-    init(tabBarController: CircularTabBarController, tabs: [AnyTabCoordinator]) {
+    init(tabBarController: BaseTabBarController, tabs: [AnyTabCoordinator]) {
         self.tabBarController = tabBarController
         self.tabs = tabs
         self.tabBarController.coordinator = self

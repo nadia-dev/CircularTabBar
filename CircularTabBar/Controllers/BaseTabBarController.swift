@@ -1,5 +1,5 @@
 //
-//  CircularTabBarController.swift
+//  BaseTabBarController.swift
 //  CircularTabBar
 //
 //  Created by Nadia Yudina on 1/2/19.
@@ -9,7 +9,7 @@
 import UIKit
 import Anchorage
 
-class CircularTabBarController: UITabBarController {
+class BaseTabBarController: UITabBarController {
     
     private let tabItemSide: CGFloat = 50
     

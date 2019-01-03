@@ -19,7 +19,7 @@
 		81FDCA2121DD3EA400FB9F1E /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FDCA2021DD3EA400FB9F1E /* AppCoordinator.swift */; };
 		81FDCA2321DD400E00FB9F1E /* AnyTabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FDCA2221DD400E00FB9F1E /* AnyTabCoordinator.swift */; };
 		81FDCA2521DD403600FB9F1E /* BaseTabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FDCA2421DD403600FB9F1E /* BaseTabCoordinator.swift */; };
-		81FDCA2721DD47BE00FB9F1E /* CircularTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FDCA2621DD47BE00FB9F1E /* CircularTabBarController.swift */; };
+		81FDCA2721DD47BE00FB9F1E /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FDCA2621DD47BE00FB9F1E /* BaseTabBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,7 +49,7 @@
 		81FDCA2021DD3EA400FB9F1E /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		81FDCA2221DD400E00FB9F1E /* AnyTabCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyTabCoordinator.swift; sourceTree = "<group>"; };
 		81FDCA2421DD403600FB9F1E /* BaseTabCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabCoordinator.swift; sourceTree = "<group>"; };
-		81FDCA2621DD47BE00FB9F1E /* CircularTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularTabBarController.swift; sourceTree = "<group>"; };
+		81FDCA2621DD47BE00FB9F1E /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
 		9DF7FFCC35FF1A32A21ECFFC /* Pods_CircularTabBar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CircularTabBar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7424E7392C99364BBBFBEA9 /* Pods-CircularTabBar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CircularTabBar.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CircularTabBar/Pods-CircularTabBar.debug.xcconfig"; sourceTree = "<group>"; };
 		CB4F16C4E5550F1B2D3320A5 /* Pods-CircularTabBar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CircularTabBar.release.xcconfig"; path = "Pods/Target Support Files/Pods-CircularTabBar/Pods-CircularTabBar.release.xcconfig"; sourceTree = "<group>"; };
@@ -159,7 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				81C983D621DD209200979392 /* BaseViewController.swift */,
-				81FDCA2621DD47BE00FB9F1E /* CircularTabBarController.swift */,
+				81FDCA2621DD47BE00FB9F1E /* BaseTabBarController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -367,7 +367,7 @@
 				81FDCA2121DD3EA400FB9F1E /* AppCoordinator.swift in Sources */,
 				81FDCA1E21DD239B00FB9F1E /* CircularTabView.swift in Sources */,
 				81C983D521DD209200979392 /* AppDelegate.swift in Sources */,
-				81FDCA2721DD47BE00FB9F1E /* CircularTabBarController.swift in Sources */,
+				81FDCA2721DD47BE00FB9F1E /* BaseTabBarController.swift in Sources */,
 				81FDCA2321DD400E00FB9F1E /* AnyTabCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

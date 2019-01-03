@@ -13,12 +13,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var appCoordinator: AppCoordinator?
-    var tabBarController: CircularTabBarController?
+    var tabBarController: BaseTabBarController?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         self.window = UIWindow()
-        self.tabBarController = CircularTabBarController()
+        self.tabBarController = BaseTabBarController()
 
         let firstCoord = AnyTabCoordinator(BaseTabCoordinator(color: .red))
         let secondCoord = AnyTabCoordinator(BaseTabCoordinator(color: .blue))
